@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "mira",
+  "version": "${version}",
+  "name": "Mira",
+  "description": "client :D",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/mira/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "cc.simplicated.mira.client.miraDataGenerator"
+    ],
+    "client": [
+      "cc.simplicated.mira.client.miraClient"
+    ],
+    "main": [
+      "cc.simplicated.mira.mira"
+    ]
+  },
+  "mixins": [
+    "mira.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

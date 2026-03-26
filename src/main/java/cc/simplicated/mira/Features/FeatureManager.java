@@ -3,9 +3,11 @@ package cc.simplicated.mira.Features;
 import org.reflections.Reflections;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class FeatureManager {
     private static final Map<Class<? extends Feature>, Feature> features = new HashMap<>();
+    private static Set<String> categories;
 
     public static void init() {
         Reflections reflections = new Reflections("cc.simplicated.mira.Features"); // How can I not hardcode this >:| @Crosby24
@@ -20,6 +22,11 @@ public class FeatureManager {
                 e.printStackTrace();
             }
         }
+
+        categories = FeatureManager.getAllFeatures()
+                .stream()
+                .map(feature -> feature.getCategory())
+                .collect(Collectors.toSet());
     }
 
     public static void registerFeature(Feature feature) {
@@ -33,5 +40,9 @@ public class FeatureManager {
 
     public static List<Feature> getAllFeatures() {
         return new ArrayList<>(features.values());
+    }
+
+    public static Set<String> getAllCategories() {
+        return categories;
     }
 }

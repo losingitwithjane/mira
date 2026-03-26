@@ -1,5 +1,6 @@
 package cc.simplicated.mira.GUI;
 
 public class Colors {
-    public static final int BACKGROUND = 0xFF331e24;
+    public static final int OUTLINE = 0xFF474747;
+    public static final int SEPARATOR = 0xFF474747;
 }

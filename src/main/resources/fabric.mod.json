@@ -9,12 +9,13 @@
   "license": "All-Rights-Reserved",
   "icon": "assets/mira/icon.png",
   "environment": "client",
+  "accessWidener": "mira.classtweaker",
   "entrypoints": {
     "fabric-datagen": [
       "cc.simplicated.mira.client.miraDataGenerator"
     ],
     "client": [
-      "cc.simplicated.mira.client.miraClient"
+      "cc.simplicated.mira.client.MiraClient"
     ],
     "main": [
       "cc.simplicated.mira.mira"
